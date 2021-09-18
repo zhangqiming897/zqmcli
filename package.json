@@ -1,0 +1,25 @@
+{
+  "name": "zqm-cli",
+  "version": "1.0.0",
+  "description": "ts脚手架指令",
+  "main": "index.js",
+  "bin": {
+    "zqmcli": "./bin/zqmcli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1t"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhangqiming897"
+  },
+  "keywords": [
+    "zqmts-cli"
+  ],
+  "author": "zhangbanxian",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.2.0"
+  }
+}
