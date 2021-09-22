@@ -2,7 +2,7 @@
   "name": "zqm-cli",
   "version": "1.0.0",
   "description": "ts脚手架指令",
-  "main": "index.js",
+  "main": "./src/index.js",
   "bin": {
     "zqmcli": "./bin/zqmcli.js"
   },
