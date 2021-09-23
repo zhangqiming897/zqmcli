@@ -1,5 +1,6 @@
 const { yellow, green, blue } = require("chalk");
 const fs = require('fs');
+const npm = require('../src/npm');
 
 let fileCount = 0; /* 文件数量 */
 let dirCount = 0; /* 文件夹数量 */
@@ -80,10 +81,20 @@ const completeControl = (cb) => {
             cb(()=>{
                 blue('-----完成install-----')
                 /*判断是否存在webpack */
-                // runProject()
+                runProject()
             })
         }
     } 
+}
+
+const runProject = () => {
+    try {
+       /* 继续调用 npm 执行，npm start 命令 */
+        const start = npm([ 'start' ])
+        start()
+    }catch(e){
+        red('自动启动失败，请手动npm start 启动项目')
+    }
 }
 
 module.exports = copy;
