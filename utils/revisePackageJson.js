@@ -13,7 +13,7 @@ const revisePackageJson = (res, sourcePath) => {
            json = json.replace(/demoAuthor/g, author.trim())
            const path = process.cwd() + '/package.json'
            /* 写入文件 */
-           fs.writeFile(path, new Buffer.alloc(json), ()=>{
+           fs.writeFile(path, new Buffer.from(json), ()=>{
                green('创建文件:'+path)
                resolve();
            })
