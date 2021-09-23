@@ -54,18 +54,20 @@ const copy = (sourcePath, currentPath, cb) => {
  */
 
 const dirExist = (sourcePath, currentPath, copyCallback,cb) => {
-    if(ext){
-        /* 递归调用copy函数 */
-        copyCallback(sourcePath, currentPath, cb)
-    }else{
-        fs.mkdir(currentPath,()=>{
-            fileCount--
-            dirCount--
+    fs.exists(currentPath,(ext=>{
+        if(ext){
+            /* 递归调用copy函数 */
             copyCallback(sourcePath, currentPath, cb)
-            yellow('创建文件夹:'+currentPath)
-            completeControl(cb)
-        })
-    }
+        }else{
+            fs.mkdir(currentPath,()=>{
+                fileCount--
+                dirCount--
+                copyCallback(sourcePath, currentPath, cb)
+                yellow('创建文件夹:'+currentPath)
+                completeControl(cb)
+            })
+        }
+    }))
 }
 
 const completeControl = (cb) => {

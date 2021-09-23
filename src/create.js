@@ -1,6 +1,7 @@
 const { green, blue } = require('../utils/chalk');
 const revisePackageJson = require('../utils/revisePackageJson');
 const copy = require('../utils/copy');
+const npm = require('./npm');
 
 module.exports = (res) => {
      /* 创建文件 */
