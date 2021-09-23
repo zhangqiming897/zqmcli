@@ -1,4 +1,4 @@
-const { green } = require("chalk");
+const { green } = require("./chalk");
 const fs = require('fs');
 
 const revisePackageJson = (res, sourcePath) => {

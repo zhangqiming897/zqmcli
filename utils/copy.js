@@ -1,4 +1,4 @@
-const { yellow, green, blue } = require("chalk");
+const { yellow, green, blue } = require("./chalk");
 const fs = require('fs');
 const npm = require('../src/npm');
 
@@ -32,6 +32,7 @@ const copy = (sourcePath, currentPath, cb) => {
                     const readSteam = fs.createReadStream(newSourcePath);
                     const wirteSteam = fs.createWriteStream(newCurrentPath);
                     readSteam.pipe(wirteSteam);
+                    green( '创建文件：'+ newCurrentPath);
                     fileCount--;
                     completeControl(cb)
                     /* 判断文件夹,对文件夹单独进行dirExist操作 */
@@ -55,7 +56,7 @@ const copy = (sourcePath, currentPath, cb) => {
  */
 
 const dirExist = (sourcePath, currentPath, copyCallback,cb) => {
-    fs.exists(currentPath,(ext=>{
+    fs.access(currentPath,(ext=>{
         if(ext){
             /* 递归调用copy函数 */
             copyCallback(sourcePath, currentPath, cb)
