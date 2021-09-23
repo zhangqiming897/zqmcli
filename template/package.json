@@ -1,5 +1,5 @@
 {
-    "name": "demoName",
+    "name": "name",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -7,7 +7,7 @@
       "start": "mycli start",
       "build": "mycli build"
     },
-    "author": "demoAuthor",
+    "author": "author",
     "license": "ISC",
     "dependencies": {
       "@types/react": "^16.9.25",
