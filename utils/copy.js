@@ -5,6 +5,7 @@ const npm = require('../src/npm');
 let fileCount = 0; /* 文件数量 */
 let dirCount = 0; /* 文件夹数量 */
 let flat = 0; /* readir数量 */
+let isInstall = false;
 
 /**
  * 

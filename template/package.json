@@ -4,8 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-      "start": "mycli start",
-      "build": "mycli build"
+      "start": "zqmcli start",
+      "build": "zqmcli build"
     },
     "author": "demoauthor",
     "license": "ISC",
