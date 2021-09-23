@@ -4,12 +4,16 @@ const { green } = require('../utils/chalk');
 const { question } = require('../utils/question');
 var program = require('commander');
 var inquirer = require('inquirer');
+var create = require('../src/create');
  
 /* zqmcli create 创建项目 */
 program.command('create').description('create a project').action(function() {
     green('欢迎使用zqmcli, 轻松构建ts项目')
     inquirer.prompt(question).then(answer=>{
-        console.log('answer=', answer)
+        if(answer.conf){
+            /* 创建文件 */
+            create(answer)
+        }
     })
 })
 
