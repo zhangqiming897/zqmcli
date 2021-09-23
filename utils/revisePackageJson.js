@@ -9,8 +9,8 @@ const revisePackageJson = (res, sourcePath) => {
            const { author, name } = res;
            let json = data.toString();
            /* 替换模板 */
-           json = json.replace(/name/g, name.trim())
-           json = json.replace(/author/g, author.trim())
+           json = json.replace(/demoname/g, name.trim())
+           json = json.replace(/demoauthor/g, author.trim())
            const path = process.cwd() + '/package.json'
            /* 写入文件 */
            fs.writeFile(path, new Buffer.from(json), ()=>{
